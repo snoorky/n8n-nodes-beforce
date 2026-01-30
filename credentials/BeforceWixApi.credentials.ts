@@ -2,7 +2,7 @@ import { Icon, ICredentialTestRequest, ICredentialType, INodeProperties } from '
 
 export class BeforceWixApi implements ICredentialType {
 	name = 'beforceWixApi'
-	displayName = 'Beforce Wix Account Credentials API'
+	displayName = 'Beforce Wix Credentials API'
 	documentationUrl = 'https://dev.wix.com/docs/rest'
 	icon: Icon = 'file:beforce.svg'
 	properties: INodeProperties[] = [

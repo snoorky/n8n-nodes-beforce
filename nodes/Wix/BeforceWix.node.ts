@@ -24,15 +24,15 @@ interface WixQueryResponse {
 
 export class BeforceWix implements INodeType {
 	description: INodeTypeDescription = {
-		displayName: 'Beforce Wix',
+		displayName: 'Beforce',
 		name: 'beforceWix',
 		icon: 'file:beforce.svg',
 		group: ['transform'],
 		version: 1,
 		subtitle: '={{ $parameter["operation"] + ": " + $parameter["resource"] }}',
-		description: 'Query sites from Wix using filters, sorting and paging',
+		description: 'Manage and retrieve Wix site data through the Beforce platform',
 		usableAsTool: true,
-		defaults: { name: 'Wix Sites' },
+		defaults: { name: 'Beforce Wix' },
 		inputs: ['main'],
 		outputs: ['main'],
 		credentials: [{ name: 'beforceWixApi', required: true }],
@@ -84,7 +84,7 @@ export class BeforceWix implements INodeType {
 			const resource = this.getNodeParameter('resource', 0) as string
 			const operation = this.getNodeParameter('operation', 0) as string
 
-			if (resource !== 'sites') throw new NodeApiError(this.getNode(), { message: 'Unsupported resource' })
+			if (resource !== 'site') throw new NodeApiError(this.getNode(), { message: 'Unsupported resource' })
 
 			const baseHeaders = {
 				Authorization: credentials.apiKey as string,
