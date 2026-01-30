@@ -1,0 +1,18 @@
+{
+  "node": "n8n-nodes-beforce",
+  "nodeVersion": "1.0",
+  "codexVersion": "1.0",
+  "categories": ["Development", "Marketing"],
+  "resources": {
+    "primaryDocumentation": [
+      {
+        "url": "https://dev.wix.com/docs/rest"
+      }
+    ],
+    "credentialDocumentation": [
+      {
+        "url": "https://github.com/snoorky/n8n-nodes-beforce#credentials"
+      }
+    ]
+  }
+}
