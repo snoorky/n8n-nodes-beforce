@@ -29,6 +29,7 @@ export class BeforceWix implements INodeType {
 		icon: 'file:beforce.svg',
 		group: ['transform'],
 		version: 1,
+		subtitle: '={{ $parameter["operation"] + ": " + $parameter["resource"] }}',
 		description: 'Query sites from Wix using filters, sorting and paging',
 		usableAsTool: true,
 		defaults: { name: 'Wix Sites' },
@@ -41,10 +42,10 @@ export class BeforceWix implements INodeType {
 				name: 'resource',
 				type: 'options',
 				noDataExpression: true,
-				default: 'sites',
+				default: 'site',
 				options: [{
-					name: 'Sites',
-					value: 'sites',
+					name: 'Site',
+					value: 'site',
 				}]
 			},
 			{
@@ -57,17 +58,19 @@ export class BeforceWix implements INodeType {
 					{
 						name: 'Query Sites',
 						value: 'query',
+						action: 'Query sites a site',
 						description: 'Retrieve sites from Wix',
 					},
 					{
 						name: 'Count Sites',
 						value: 'count',
+						action: 'Count sites a site',
 						description: 'Return total number of sites',
 					},
 				],
 				displayOptions: {
 					show: {
-						resource: ['sites'],
+						resource: ['site'],
 					},
 				},
 			},
